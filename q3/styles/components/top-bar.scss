@@ -1,0 +1,39 @@
+.top {
+  &-actions {
+     margin: 20px;
+    .container {
+      justify-content: space-between;
+      align-items: center;
+      display: flex;
+      @include respond-to(mobile) {
+	flex-direction: column;
+	.top-menu {
+	  margin-top: 16px;
+	}
+      }
+    }
+  }
+  &-logo {
+    background-color: lightgray;
+    border-radius: $radius;
+    text-align: center;
+    padding: 4px;
+    width: 150px;
+  }
+  &-menu {
+    ul {
+      display: flex;
+      li {
+	padding: 6px 8px;
+	&.active {
+	  background-color: $secondary;
+	  border-radius: $radius;
+	  color: white;
+	}
+      }
+      li:not(:last-child) {
+	margin-right: 16px;
+      }
+    }
+  }
+}

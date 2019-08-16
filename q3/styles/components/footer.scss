@@ -1,0 +1,18 @@
+footer {
+  height: $footer-height;
+  position: sticky;
+  bottom: 0;
+  padding: 16px;
+  background-color: $black;
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    li {
+      color: white;
+    }
+    li:not(:last-child) {
+      margin-right: 50px;
+    }
+  }
+}
