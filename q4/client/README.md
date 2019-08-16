@@ -1,4 +1,6 @@
-# client-2
+[![codecov](https://codecov.io/gh/sametaylak/reedsy-assignment/branch/master/graph/badge.svg)](https://codecov.io/gh/sametaylak/reedsy-assignment)
+
+# client
 
 ## Project setup
 ```
