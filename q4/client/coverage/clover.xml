@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1565953780576" clover="3.2.0">
+  <project timestamp="1565953780577" name="All files">
+    <metrics statements="17" coveredstatements="17" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2" elements="23" coveredelements="23" complexity="0" loc="17" ncloc="17" packages="4" files="6" classes="6">
+      <package name="src">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <file name="router.js" path="/Users/samet/Documents/reedsy-assignment/q4/client/src/router.js">
+          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="7" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.components">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <file name="BookItem.vue" path="/Users/samet/Documents/reedsy-assignment/q4/client/src/components/BookItem.vue">
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="14" count="3" type="stmt"/>
+          <line num="27" count="1" type="stmt"/>
+        </file>
+        <file name="BookList.vue" path="/Users/samet/Documents/reedsy-assignment/q4/client/src/components/BookList.vue">
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="8" count="3" type="stmt"/>
+          <line num="18" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.filters">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <file name="truncate.js" path="/Users/samet/Documents/reedsy-assignment/q4/client/src/filters/truncate.js">
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="1" count="2" type="stmt"/>
+          <line num="2" count="6" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.views">
+        <metrics statements="10" coveredstatements="10" conditionals="4" coveredconditionals="4" methods="0" coveredmethods="0"/>
+        <file name="BookDetail.vue" path="/Users/samet/Documents/reedsy-assignment/q4/client/src/views/BookDetail.vue">
+          <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="0" coveredmethods="0"/>
+          <line num="22" count="2" type="stmt"/>
+          <line num="24" count="2" type="stmt"/>
+          <line num="32" count="3" type="stmt"/>
+          <line num="37" count="3" type="cond" truecount="2" falsecount="0"/>
+          <line num="38" count="1" type="stmt"/>
+          <line num="40" count="3" type="stmt"/>
+        </file>
+        <file name="Books.vue" path="/Users/samet/Documents/reedsy-assignment/q4/client/src/views/Books.vue">
+          <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="0" coveredmethods="0"/>
+          <line num="9" count="2" type="stmt"/>
+          <line num="11" count="2" type="stmt"/>
+          <line num="19" count="2" type="cond" truecount="2" falsecount="0"/>
+          <line num="20" count="1" type="stmt"/>
+        </file>
+      </package>
+    </metrics>
+  </project>
+</coverage>

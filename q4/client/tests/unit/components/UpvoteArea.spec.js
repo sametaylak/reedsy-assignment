@@ -47,4 +47,22 @@ describe('UpvoteArea.vue', () => {
     expect(wrapper.find('button.upvote').text()).toEqual('Upvote')
     expect(wrapper.find('button.upvoted').exists()).toBe(false)
   })
+
+  it('should have consistent dom', () => {
+    const book = {
+      author: 'Samet A.',
+      cover: 'odyssey.jpg',
+      title: 'Odyssey',
+      slug: 'odyssey',
+      synopsis: 'best book ever',
+      upvoted: false,
+      upvotes: 101
+    }
+
+    const wrapper = shallowMount(UpvoteArea, {
+      propsData: { book }
+    })
+
+    expect(wrapper).toMatchSnapshot()
+  })
 })

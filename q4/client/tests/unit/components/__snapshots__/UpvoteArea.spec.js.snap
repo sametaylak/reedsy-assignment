@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UpvoteArea.vue should have consistent dom 1`] = `
+<div class="upvote-area"><span>Upvoted 101 times</span> <button class="upvote">
+    Upvote
+  </button></div>
+`;

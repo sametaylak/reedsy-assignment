@@ -89,4 +89,23 @@ describe('BookItem.vue', () => {
     wrapper.find('.title').trigger('click')
     expect(wrapper.vm.$route.name).toEqual('BookDetail')
   })
+
+  it('should have consistent dom', () => {
+    const book = {
+      author: 'Samet A.',
+      title: 'Odyssey',
+      slug: 'odyssey',
+      cover: 'odyssey.jpg',
+      synopsis: 'best book ever',
+      upvoted: true,
+      upvotes: 101
+    }
+
+    const wrapper = shallowMount(BookItem, {
+      propsData: { order: 0, book },
+      localVue,
+    })
+
+    expect(wrapper).toMatchSnapshot()
+  })
 })

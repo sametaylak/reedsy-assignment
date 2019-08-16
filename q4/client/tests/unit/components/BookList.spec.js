@@ -29,4 +29,24 @@ describe('BookList.vue', () => {
     expect(wrapper.find(BookItem).exists()).toBe(true)
     expect(wrapper.findAll(BookItem).length).toEqual(1)
   })
+
+  it('should have consistent dom', () => {
+    const list = [
+      {
+        author: 'Samet A.',
+        title: 'Odyssey',
+        cover: 'odyssey.jpg',
+        slug: 'odyssey',
+        synopsis: 'best book ever',
+        upvoted: true,
+        upvotes: 101
+      }
+    ]
+
+    const wrapper = shallowMount(BookList, {
+      propsData: { list }
+    })
+
+    expect(wrapper).toMatchSnapshot()
+  })
 })

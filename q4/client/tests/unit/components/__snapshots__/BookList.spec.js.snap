@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BookList.vue should have consistent dom 1`] = `
+<div class="book-list">
+  <bookitem-stub order="0" book="[object Object]"></bookitem-stub>
+</div>
+`;
