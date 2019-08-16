@@ -6,10 +6,6 @@ module.exports = {
     'vue'
   ],
   collectCoverage: true,
-  coverageReporters: [
-    'html',
-    'text-summary'
-  ],
   transform: {
     '^.+\\.vue$': 'vue-jest',
     '.+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$': 'jest-transform-stub',
