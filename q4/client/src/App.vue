@@ -14,6 +14,12 @@
   width: 83.33%;
 }
 
-@mixin button {
+input[type=text] {
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  padding: 4px 6px;
+  font-size: 14px;
+  background: none;
+  outline: none;
 }
 </style>

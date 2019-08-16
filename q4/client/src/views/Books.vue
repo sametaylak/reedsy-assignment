@@ -1,7 +1,10 @@
 <template>
   <div class="books">
     <h1>Top Books of All Time</h1>
-    <BookList :list="books"/>
+    <div class="search">
+      <input v-model="query" type="text" placeholder="Search.."/>
+    </div>
+    <BookList :list="filteredBooks"/>
   </div>
 </template>
 
@@ -15,6 +18,11 @@ export default {
   components: {
     BookList
   },
+  data () {
+    return {
+      query: ''
+    }
+  },
   async mounted () {
     if (this.books.length === 0) {
       await this.fetchBooks()
@@ -23,7 +31,13 @@ export default {
   computed: {
     ...mapGetters([
       'books'
-    ])
+    ]),
+    filteredBooks () {
+      return this.books.filter(book => {
+        return book.title.toLowerCase().includes(this.query.toLowerCase()) ||
+          book.synopsis.toLowerCase().includes(this.query.toLowerCase())
+      })
+    }
   },
   methods: {
     ...mapActions([
@@ -32,3 +46,13 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.books {
+  .search {
+    display: flex;
+    margin: 16px 8px;
+    justify-content: flex-end;
+  }
+}
+</style>

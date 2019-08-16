@@ -28,8 +28,10 @@ describe('Books.vue', () => {
     actions = {
       fetchBooks: jest.fn(() => {
         state.books.data.push({
-          author: 'Samet Aylak',
-          slug: 'samet-aylak'
+          author: 'Book Author',
+          title: 'Book Title',
+          synopsis: 'Book Synopsis',
+          slug: 'book-title'
         })
         state.books.meta.count += 1
       }) 
@@ -52,8 +54,10 @@ describe('Books.vue', () => {
 
   it('shouldt fetch books if there are', () => {
     state.books.data.push({
-      author: 'Samet Aylak',
-      slug: 'samet-aylak'
+      author: 'Book Author',
+      title: 'Book Title',
+      synopsis: 'Book Synopsis',
+      slug: 'book-title'
     })
     state.books.meta.count += 1
 
@@ -63,5 +67,34 @@ describe('Books.vue', () => {
     })
 
     expect(actions.fetchBooks.mock.calls.length).toEqual(0)
+  })
+
+  it('should search books with title and synopsis', () => {
+    state.books.data.push({
+      author: 'Book Author',
+      title: 'Book Title',
+      synopsis: 'Book Synopsis',
+      slug: 'book-title'
+    })
+    state.books.data.push({
+      author: 'Another Author',
+      title: 'Another',
+      synopsis: 'Another Synopsis',
+      slug: 'another'
+    })
+    state.books.meta.count += 2
+
+    wrapper = shallowMount(Books, {
+      store,
+      localVue
+    })
+
+    wrapper.find('.search input').setValue('Another')
+    expect(wrapper.vm.filteredBooks.length).toEqual(1)
+    expect(wrapper.vm.filteredBooks[0].title).toEqual('Another')
+
+    wrapper.find('.search input').setValue('Book Synopsis')
+    expect(wrapper.vm.filteredBooks.length).toEqual(1)
+    expect(wrapper.vm.filteredBooks[0].title).toEqual('Book Title')
   })
 })

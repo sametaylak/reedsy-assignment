@@ -1,11 +1,11 @@
-import truncate from '@/filters/truncate';
+import truncate from '@/filters/truncate'
 
 describe('Truncate Synopsis', () => {
    it('exists', () => {
-      expect(truncate).toBeDefined();
-   });
+      expect(truncate).toBeDefined()
+   })
 
    it('truncate with 5', () => {
-       expect(truncate('1234567', 5, '...')).toEqual('12345...');   
-   });
-});
+       expect(truncate('1234567', 5, '...')).toEqual('12345...')
+   })
+})
