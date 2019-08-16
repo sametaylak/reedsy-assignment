@@ -1,10 +1,7 @@
-import { shallowMount } from '@vue/test-utils'
-import Vue from 'vue'
+import { createLocalVue, shallowMount } from '@vue/test-utils'
 import Vuex from 'vuex'
 
 import Books from '@/views/Books.vue'
-
-Vue.use(Vuex)
 
 describe('Books.vue', () => {
   let wrapper
@@ -12,6 +9,9 @@ describe('Books.vue', () => {
   let getters
   let actions
   let store
+
+  const localVue = createLocalVue()
+  localVue.use(Vuex)
 
   beforeEach(() => {
     state = {
@@ -43,7 +43,8 @@ describe('Books.vue', () => {
 
   it('should fetch books if there arent', () => {
     wrapper = shallowMount(Books, {
-      store
+      store,
+      localVue
     })
 
     expect(actions.fetchBooks.mock.calls.length).toEqual(1)
@@ -57,7 +58,8 @@ describe('Books.vue', () => {
     state.books.meta.count += 1
 
     wrapper = shallowMount(Books, {
-      store
+      store,
+      localVue
     })
 
     expect(actions.fetchBooks.mock.calls.length).toEqual(0)

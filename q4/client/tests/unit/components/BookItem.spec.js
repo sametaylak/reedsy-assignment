@@ -14,6 +14,7 @@ describe('BookItem.vue', () => {
     const wrapper = shallowMount(BookItem, {
       localVue
     })
+
     expect(wrapper.props().order).toBeUndefined()
     expect(wrapper.props().book).toBeUndefined()
   })

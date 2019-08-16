@@ -1,10 +1,7 @@
-import { shallowMount } from '@vue/test-utils'
-import Vue from 'vue'
+import { createLocalVue, shallowMount } from '@vue/test-utils'
 import Vuex from 'vuex'
 
 import BookDetail from '@/views/BookDetail.vue'
-
-Vue.use(Vuex)
 
 describe('BookDetail.vue', () => {
   let wrapper
@@ -12,6 +9,9 @@ describe('BookDetail.vue', () => {
   let getters
   let actions
   let store
+
+  const localVue = createLocalVue()
+  localVue.use(Vuex)
 
   beforeEach(() => {
     state = {
@@ -51,7 +51,8 @@ describe('BookDetail.vue', () => {
           }
         }
       },
-      store
+      store,
+      localVue
     })
 
     expect(actions.fetchBooks.mock.calls.length).toEqual(1)
@@ -72,10 +73,12 @@ describe('BookDetail.vue', () => {
           }
         }
       },
-      store
+      store,
+      localVue
     })
 
     expect(actions.fetchBooks.mock.calls.length).toEqual(0)
+    expect(state.books.meta.count).toEqual(1)
   })
 
   it('should get book by slug', () => {
@@ -93,9 +96,11 @@ describe('BookDetail.vue', () => {
           }
         }
       },
-      store
+      store,
+      localVue
     })
 
     expect(getters.getBookBySlug.mock.calls.length).toEqual(1)
+    expect(state.books.meta.count).toEqual(1)
   })
 })

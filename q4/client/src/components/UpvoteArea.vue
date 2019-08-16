@@ -1,5 +1,5 @@
 <template>
-  <div class="upvote-area">
+  <div class="upvote-area" v-if="book">
     <span>Upvoted {{ book.upvotes }} times</span>
     <button :class="{ upvoted: book.upvoted, upvote: !book.upvoted }">
       {{ book.upvoted ? 'Upvoted' : 'Upvote' }}
