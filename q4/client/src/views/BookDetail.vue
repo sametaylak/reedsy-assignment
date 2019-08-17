@@ -46,9 +46,10 @@ export default {
   },
   async mounted () {
     if (this.books.length === 0) {
-      await this.fetchBooks()
+      this.book = await this.fetchBook(this.$route.params.slug)
+    } else {
+      this.book = this.getBookBySlug(this.$route.params.slug)
     }
-    this.book = this.getBookBySlug(this.$route.params.slug)
   },
   computed: {
     ...mapGetters([
@@ -58,7 +59,7 @@ export default {
   },
   methods: {
     ...mapActions([
-      'fetchBooks'
+      'fetchBook'
     ])
   }
 }

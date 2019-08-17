@@ -31,6 +31,11 @@ export default new Vuex.Store({
         books: booksJson.books,
         meta: booksJson.meta
       })
+    },
+    async fetchBook (_, slug) {
+      const booksResponse = await fetch(`${BASE_URL}/books/${slug}`)
+      const booksJson = await booksResponse.json()
+      return booksJson
     }
   }
 })

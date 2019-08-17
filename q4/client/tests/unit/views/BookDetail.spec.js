@@ -27,12 +27,11 @@ describe('BookDetail.vue', () => {
       getBookBySlug: jest.fn(() => slug => state.books.data.find(book => book.slug === slug))
     }
     actions = {
-      fetchBooks: jest.fn(() => {
-        state.books.data.push({
+      fetchBook: jest.fn(() => {
+        return {
           author: 'Samet Aylak',
           slug: 'samet-aylak'
-        })
-        state.books.meta.count += 1
+        }
       }) 
     }
     store = new Vuex.Store({
@@ -42,7 +41,7 @@ describe('BookDetail.vue', () => {
     })
   })
 
-  it('should fetch books if there arent', () => {
+  it('should fetch book if there arent', () => {
     wrapper = shallowMount(BookDetail, {
       mocks: {
         $route: {
@@ -55,7 +54,7 @@ describe('BookDetail.vue', () => {
       localVue
     })
 
-    expect(actions.fetchBooks.mock.calls.length).toEqual(1)
+    expect(actions.fetchBook.mock.calls.length).toEqual(1)
   })
 
   it('shouldt fetch books if there are', () => {
@@ -77,8 +76,7 @@ describe('BookDetail.vue', () => {
       localVue
     })
 
-    expect(actions.fetchBooks.mock.calls.length).toEqual(0)
-    expect(state.books.meta.count).toEqual(1)
+    expect(actions.fetchBook.mock.calls.length).toEqual(0)
   })
 
   it('should get book by slug', () => {
@@ -101,6 +99,5 @@ describe('BookDetail.vue', () => {
     })
 
     expect(getters.getBookBySlug.mock.calls.length).toEqual(1)
-    expect(state.books.meta.count).toEqual(1)
   })
 })
