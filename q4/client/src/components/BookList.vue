@@ -1,11 +1,16 @@
 <template>
   <div class="book-list">
-    <BookItem v-for="(book, index) in paginatedData" :order="index + (page * perPage)" :book="book" :key="book.slug"/>
-    <Pagination
-      :prevPageDisableCondition="onFirstPage"
-      :nextPageDisableCondition="onLastPage"
-      :prevPage="prevPage"
-      :nextPage="nextPage" />
+    <template v-if="paginatedData.length === 0">
+      <span>Opps, There is nothing :(</span>
+    </template>
+    <template v-else>
+      <BookItem v-for="(book, index) in paginatedData" :order="index + (page * perPage)" :book="book" :key="book.slug"/>
+      <Pagination
+        :prevPageDisableCondition="onFirstPage"
+        :nextPageDisableCondition="onLastPage"
+        :prevPage="prevPage"
+        :nextPage="nextPage" />
+    </template>
   </div>
 </template>
 

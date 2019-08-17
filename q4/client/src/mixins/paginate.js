@@ -6,6 +6,11 @@ export default (options = { entity: '', perPage: 5 }) => {
         perPage: options.perPage 
       }
     },
+    watch: {
+      pageCount () {
+        this.page = 0
+      }
+    },
     computed: {
       onFirstPage () {
         return this.page === 0
