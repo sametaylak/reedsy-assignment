@@ -15,6 +15,7 @@
       {{ book.synopsis }}
     </p>
     <span><b>Rating:</b> {{ book.rating }}/10</span>
+    <CommentArea :comments="comments"/>
   </div>
 </template>
 
@@ -22,15 +23,25 @@
 import { mapActions, mapGetters } from 'vuex'
 
 import UpvoteArea from '@/components/UpvoteArea'
+import CommentArea from '@/components/CommentArea'
 
 export default {
   name: 'BookDetail',
   components: {
-    UpvoteArea
+    UpvoteArea,
+    CommentArea
   },
   data () {
     return {
-      book: {}
+      book: {},
+      comments: [
+        {
+          message: 'This was awesome!!'
+        },
+        {
+          message: 'Well, not to bad.'
+        }
+      ]
     }
   },
   async mounted () {
