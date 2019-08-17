@@ -1,3 +1,5 @@
+[![codecov](https://codecov.io/gh/sametaylak/reedsy-assignment/branch/master/graph/badge.svg)](https://codecov.io/gh/sametaylak/reedsy-assignment)
+
 ## Notes
 - q4/server/src/server.js: line 10 `host: 'localhost'` added for sake of clarity
 
@@ -27,4 +29,6 @@
 - q3 folder for q3.html
 
 ## 4. SPA
-- About SPA with Vue
+- Comment Section added
+- Book Search added
+- Pagination added
