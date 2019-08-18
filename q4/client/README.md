@@ -22,7 +22,7 @@ yarn build
 yarn test:unit
 ```
 
-### Run your unit tests
+### Run your coverage report
 ```
 yarn test:coverage
 ```
